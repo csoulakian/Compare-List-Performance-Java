@@ -8,6 +8,7 @@ import static org.junit.Assert.fail;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.After;
@@ -21,7 +22,9 @@ public class TestIterator {
 	@Before
 	public void setUp() throws Exception {
 		list = new ArrayList<Integer>();
-		// TODO also try with a LinkedList - does it make any difference?
+		// DONE also try with a LinkedList - does it make any difference?
+        // No difference!
+        //list = new LinkedList<Integer>();
 	}
 
 	@After
@@ -47,7 +50,7 @@ public class TestIterator {
 		final Iterator<Integer> i = list.iterator();
 		assertTrue(i.hasNext());
 		assertEquals(33, i.next().intValue());
-		// TODO fix the expected values in the assertions below
+		// DONE fix the expected values in the assertions below
 		assertTrue(i.hasNext());
 		assertEquals(77, i.next().intValue());
 		assertTrue(i.hasNext());
@@ -99,8 +102,13 @@ public class TestIterator {
 		list.add(66);
 		double sum = 0;
 		int n = 0;
-		// TODO use an iterator and a while loop to compute the average (mean) of the values
+		// DONE use an iterator and a while loop to compute the average (mean) of the values
 		// (defined as the sum of the items divided by the number of items)
+        final Iterator<Integer> i = list.iterator();
+        while (i.hasNext()) {
+            sum += i.next();
+            n++;
+        }
 		assertEquals(61.3, sum / n, 0.1);
 		assertEquals(7, n);
 	}
