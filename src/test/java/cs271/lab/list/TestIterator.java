@@ -6,6 +6,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -48,17 +49,17 @@ public class TestIterator {
 		assertEquals(33, i.next().intValue());
 		// TODO fix the expected values in the assertions below
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(77, i.next().intValue());
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(44, i.next().intValue());
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(77, i.next().intValue());
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(55, i.next().intValue());
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(77, i.next().intValue());
 		assertTrue(i.hasNext());
-		assertEquals(0, i.next().intValue());
+		assertEquals(66, i.next().intValue());
 		assertFalse(i.hasNext());
 	}
 
@@ -74,12 +75,17 @@ public class TestIterator {
 		final Iterator<Integer> i = list.iterator();
 		while (i.hasNext()) {
 			if (i.next() == 77) {
-				i.remove(); // TODO what happens if you use list.remove(77)?
+                i.remove();
+                //list.remove(77);
+                // DONE what happens if you use list.remove(77)?
+                //there is an out of bounds exception because
+                //the list.remove(77) method removes the entry
+                //at index 77.
 			}
 		}
-		// TODO using assertEquals and Arrays.asList (see above)
+		// DONE using assertEquals and Arrays.asList (see above)
 		// express which values are left in the list
-		fail("Not yet implemented"); // remove this line when done
+        assertEquals(Arrays.asList(33, 44, 55, 66), list);
 	}
 
 	@Test
