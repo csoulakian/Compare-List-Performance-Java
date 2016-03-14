@@ -1,7 +1,9 @@
 Chrissy Soulakian
-COMP 313 - Project 2
-Listing of questions embedded in the code
+Fall 2014 COMP 313 - Project 2
+Assignment: Complete sections marked "TODO" and answer questions embedded in the code.
 
+
+Listing of questions embedded in the code
 
 TestIterator and TestList Classes
 - setUp methods
@@ -43,4 +45,3 @@ Size	AddRemove	Access
 100	0.062 sec	0.050 sec
 1000	0.055 sec	0.415 sec
 10000	0.057 sec	5 sec
-
